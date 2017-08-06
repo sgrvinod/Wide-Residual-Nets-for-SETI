@@ -40,7 +40,7 @@ All tensors were stored in HDF5 files for reading during model training.
 
 For the winning entry, we used an averaged ensemble of 5 [___Wide Residual Networks___](https://arxiv.org/abs/1605.07146), trained on different sets of 4/5 folds, each with a depth of 34 (convolutional layers) and a widening factor of 2:
 
-![WResnet34x2 Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/wresnet34x2.PNG)
+![WResnet34x2 Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/wresnet34x2.png)
 
 In the above figure, the architecture of each _BasicBlock_ is as follows:
 
