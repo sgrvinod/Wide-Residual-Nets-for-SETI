@@ -15,7 +15,9 @@ Check out the [_ml4seti_ Github](https://github.com/setiQuest/ML4SETI) for more 
 
 The criterion to select the winning entry was the (multinomial) _LogLoss_ of the model. 
 
-Here are the final LogLoss measures of the competing teams on the Preview and Final test datasets:
+Here are the final LogLoss measures of the top teams on the Final test set:
+
+![Final Test Leaderboard](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/final_leaderboard.png)
 
 ---
 ## Data
@@ -38,12 +40,11 @@ All tensors were stored in HDF5 files for reading during model training.
 
 For the winning entry, we used an averaged ensemble of 5 [___Wide Residual Networks___](https://arxiv.org/abs/1605.07146), trained on different sets of 4/5 folds, each with a depth of 34 (convolutional layers) and a widening factor of 2:
 
-
+![WResnet34x2 Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/wresnet34x2.PNG)
 
 In the above figure, the architecture of each _BasicBlock_ is as follows:
 
-
-
+![BasicBlock Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/basicblock.PNG)
 
 In the interest of time, we used an aggressive Learning Rate schedule. Starting at 0.1, we halved it when the model did not improve for 3 consecutive epochs, and terminated training when it failed to improve for 8 consecutive epochs.
 
@@ -56,6 +57,8 @@ The validation accuracies on each of the folds (having trained on the other 4 fo
 | Fold 3 | 95.88% |
 | Fold 4 | 95.88% |
 | Fold 5 | 95.77% |
+
+For the final submission, each of these 5 fold-models were run on the test dataset, and their scores averaged.
 
 ---
 
