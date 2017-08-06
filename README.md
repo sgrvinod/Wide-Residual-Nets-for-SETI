@@ -46,7 +46,7 @@ In the above figure, the architecture of each _BasicBlock_ is as follows:
 
 ![BasicBlock Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/basicblock.PNG)
 
-In the interest of time, we used an aggressive Learning Rate schedule. Starting at 0.1, we halved it when the model did not improve for 3 consecutive epochs, and terminated training when it failed to improve for 8 consecutive epochs.
+In the interest of time, we used a batch size of 96 and an aggressive learning rate schedule. Starting at 0.1, we halved the learning rate when the model did not improve for 3 consecutive epochs, and terminated training when it failed to improve for 8 consecutive epochs.
 
 The validation accuracies on each of the folds (having trained on the other 4 folds) is as follows:
 
