@@ -53,9 +53,9 @@ The validation accuracies on each of the folds (having trained on the other 4 fo
 | Validation Fold | Validation Accuracy |
 | :-------------: | :-----------------: |
 | Fold 1 | 95.88% |
-| Fold 2 | 95.88% |
-| Fold 3 | 95.88% |
-| Fold 4 | 95.88% |
+| Fold 2 | 95.74% |
+| Fold 3 | 95.79% |
+| Fold 4 | 95.65% |
 | Fold 5 | 95.77% |
 
 For the final submission, each of these 5 fold-models were run on the test dataset, and their scores averaged.
