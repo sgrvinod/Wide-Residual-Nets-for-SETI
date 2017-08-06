@@ -60,6 +60,6 @@ The validation accuracies on each of the folds (having trained on the other 4 fo
 ---
 
 (Team) ___Effsubsee___
-Stephane Egly
-Sagar Vinodababu
-Jeffrey Voien
+* Stephane Egly
+* Sagar Vinodababu
+* Jeffrey Voien
