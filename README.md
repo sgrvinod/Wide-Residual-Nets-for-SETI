@@ -31,7 +31,7 @@ The training data contained 140,000 signals across the 7 classes. Our data prepa
 5. Two features are generated from the complex amplitudes -
     - Log of Square of Absolute Value of Amplitude
     - Phase
-6. Each resulting [384, 512, 2] tensor is normalized by the mean and standard deviation across the entire training dataset.
+6. Each resulting [384, 512, 2] tensor is normalized by the frequency-bin-wise mean and standard deviation across the entire training dataset.
 
 All tensors were stored in HDF5 files for reading during model training.
 
