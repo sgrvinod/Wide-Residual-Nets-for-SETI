@@ -87,6 +87,6 @@ To evaluate the model(s) and/or to reproduce our results on the Final Test Set:
 
 ---
 (Team) ___Effsubsee___
-* Stephane Egly
+* Stéphane Egly
 * Sagar Vinodababu
 * Jeffrey Voien
