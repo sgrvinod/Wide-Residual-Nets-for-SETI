@@ -58,7 +58,7 @@ For the final submission, each of these 5 fold-models were run on the test datas
 
 ---
 
-## Evaluating the model
+## Generating the solution
 
 Dependencies:
 `pytorch 0.1.12`
