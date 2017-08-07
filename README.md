@@ -61,6 +61,11 @@ For the final submission, each of these 5 fold-models were run on the test datas
 ## Evaluating the model
 
 Dependencies:
+`pytorch 0.1.12`
+`torchvision 0.1.8`
+`pandas`
+`h5py`
+`scikit-learn`
 
 To evaluate the model(s) and/or to reproduce our results on the Final Test Set:
 
