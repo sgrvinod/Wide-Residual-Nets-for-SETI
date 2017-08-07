@@ -1,6 +1,6 @@
-# Effsubsee, winner of the _ml4seti_ Code Challenge
+# ml4seti - Winning Entry
 
-This is the repository of ___Effsubsee___, the winner of the [___ml4seti___ __Code Challenge__](http://www.seti.org/ml4seti), organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](www.seti.org).
+This is the repository of ___Effsubsee___, the winner of the [___ml4seti___ __Code Challenge/Competition__](http://www.seti.org/ml4seti), organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](www.seti.org).
 
 The objective of the _ml4seti_ was to train a classifier to differentiate between the following signal types:
 * brightpixel
@@ -14,10 +14,6 @@ The objective of the _ml4seti_ was to train a classifier to differentiate betwee
 Check out the [_ml4seti_ Github](https://github.com/setiQuest/ML4SETI) for more details.
 
 The criterion to select the winning entry was the (multinomial) _LogLoss_ of the model. 
-
-Here are the final LogLoss measures of the top teams on the Final test set:
-
-![Final Test Leaderboard](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/final_leaderboard.png)
 
 ---
 ## Data
@@ -33,16 +29,16 @@ The training data contained 140,000 signals across the 7 classes. Our data prepa
     - Phase
 6. Each resulting [384, 512, 2] tensor is normalized by the frequency-bin-wise mean and standard deviation across the entire training dataset.
 
-All tensors were stored in HDF5 files for reading during model training.
+All tensors were stored in HDF5 files, and batches are read directly from disk during model training.
 
 ---
 ## Model
 
-For the winning entry, we used an averaged ensemble of 5 [___Wide Residual Networks___](https://arxiv.org/abs/1605.07146), trained on different sets of 4/5 folds, each with a depth of 34 (convolutional layers) and a widening factor of 2:
+For the winning entry, we used an averaged ensemble of 5 [___Wide Residual Networks___](https://arxiv.org/abs/1605.07146), trained on different sets of 4(/5) folds, each with a depth of 34 (convolutional layers) and a widening factor of 2.
 
 ![WResnet34x2 Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/wresnet34x2.png)
 
-In the above figure, the architecture of each _BasicBlock_ is as follows:
+In the above figure, the architecture of each _BasicBlock_ is as follows -- 
 
 ![BasicBlock Architecture](https://github.com/sgrvinod/Effsubsee-ml4seti-Code-Challenge/blob/master/img/basicblock.PNG)
 
@@ -62,6 +58,29 @@ For the final submission, each of these 5 fold-models were run on the test datas
 
 ---
 
+## Evaluating the model
+
+Dependencies:
+
+To evaluate the model(s) and/or to reproduce our results on the Final Test Set:
+
+1. Download the signal files and the corresponding CSV with the `UUID` column into a single folder.
+
+2. In `./folds/create_h5_tensors.py`, run the `create_test_tensors_hdf5_logmod2_ph()` function, while pointing to your raw signal data. This will create an hdf5 file with the test tensor.
+
+3. Run `test.py` with the architecture name, checkpoint, test hdf5 file, and the hdf5 file containing the mean and standard deviation used for normalizing. Do this for all 5 folds. For example, for fold 1:
+
+    `python test.py 'wresnet34x2' './wresnet34x2 models/wresnet34x2 FOLD1/FOLD1_BEST_wresnet34x2_batchsize96_checkpoint.pth' 'path/to/your/test/hdf5' './folds/mean_stddev_primary_full_v3__384t__512f__logmod2-ph.hdf5'`.
+
+    The CSVs with the scores for each fold-model will be saved in the same folder as `test.py`.
+    
+    Note: If you don't have a CUDA-enabled GPU, the code will need to be modified to support CPU. Reach out to us on the _ml4seti_ Slack channel if you need help with this.
+
+4. Move these CSVs to a separate folder, and run `average_scores.py` by pointing to this folder, and specifying the path for the output CSV:
+
+    `python average_scores.py 'path/to/folder/with/individual/model/scores' 'path/to/output/csv.csv'`
+
+---
 (Team) ___Effsubsee___
 * Stephane Egly
 * Sagar Vinodababu
