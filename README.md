@@ -75,7 +75,7 @@ To evaluate the model(s) and/or to reproduce our results on the Final Test Set:
 
 3. Run `test.py` with the architecture name, checkpoint, test hdf5 file, and the hdf5 file containing the mean and standard deviation used for normalizing. Do this for all 5 folds. For example, for fold 1:
 
-    `python test.py 'wresnet34x2' './wresnet34x2 models/wresnet34x2 FOLD1/FOLD1_BEST_wresnet34x2_batchsize96_checkpoint.pth' 'path/to/your/test/hdf5' './folds/mean_stddev_primary_full_v3__384t__512f__logmod2-ph.hdf5'`.
+    `python test.py 'wresnet34x2' './wresnet34x2 models/wresnet34x2 FOLD1/FOLD1_BEST_wresnet34x2_batchsize96_checkpoint.pth.tar' 'path/to/your/test/hdf5' './folds/mean_stddev_primary_full_v3__384t__512f__logmod2-ph.hdf5'`.
 
     The CSVs with the scores for each fold-model will be saved in the same folder as `test.py`.
     
