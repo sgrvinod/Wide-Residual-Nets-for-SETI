@@ -26,7 +26,6 @@ def run(modelcheckpoint, normalizeData, simfile):
     if os.path.isfile(modelcheckpoint):
         print("=> Loading checkpoint '{}'".format(modelcheckpoint))
         checkpoint = torch.load(modelcheckpoint, map_location=lambda storage, loc: storage)
-        args.start_epoch = checkpoint['epoch']
         best_acc = checkpoint['best_acc']
         print("This model had an accuracy of %.2f on the validation set." % (best_acc,))
         keys = checkpoint['state_dict'].keys()
