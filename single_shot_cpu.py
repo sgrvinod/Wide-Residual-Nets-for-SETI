@@ -7,7 +7,7 @@ import torch.backends.cudnn as cudnn
 import torch.optim
 import torch.utils.data
 import torchvision.transforms as transforms
-from wresnet_models_cpu import *
+from wresnet_models import *
 from h5_dataloaders import *
 import pandas as pd
 import ibmseti
