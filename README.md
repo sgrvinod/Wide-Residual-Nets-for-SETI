@@ -1,6 +1,10 @@
-# ml4seti - Winning Entry
+# Classification of simulated radio signals using Wide Residual Networks for use in the search for extra-terrestrial intelligence
 
-This is the repository for the winning model entry in the [___ml4seti___ __Code Challenge__](http://www.seti.org/ml4seti) competition, organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](www.seti.org).
+This is the repository for the paper "[___Classification of simulated radio signals using Wide Residual Networks for use in the search for extra-terrestrial intelligence___](https://arxiv.org/abs/1803.08624)", (currently preprint).
+
+The models were originally the winning entry in the [___ML4SETI___ __Code Challenge__](http://www.seti.org/ml4seti) competition, organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](www.seti.org).
+
+## ML4SETI
 
 The objective of the _ml4seti_ was to train a classifier to differentiate between the following signal types:
 * brightpixel
@@ -85,8 +89,3 @@ To evaluate the model(s) and/or to reproduce our results on the Final Test Set:
 
     `python average_scores.py 'path/to/folder/with/individual/model/scores' 'path/to/output/csv.csv'`
 
----
-(Team) ___Effsubsee___
-* Stéphane Egly
-* Sagar Vinodababu
-* Jeffrey Voien
