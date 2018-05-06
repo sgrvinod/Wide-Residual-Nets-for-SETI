@@ -2,7 +2,7 @@
 
 This is the repository for the paper "[___Classification of simulated radio signals using Wide Residual Networks for use in the search for extra-terrestrial intelligence___](https://arxiv.org/abs/1803.08624)", (currently preprint).
 
-The models were originally the winning entry in the [___ML4SETI___ __Code Challenge__](http://www.seti.org/ml4seti) competition, organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](www.seti.org).
+The models were originally the winning entry in the [___ML4SETI___ __Code Challenge__](http://www.seti.org/ml4seti) competition, organized by the [___Search for ExtraTerrestrial Intelligence (SETI) Institute___](http://www.seti.org).
 
 ## ML4SETI
 
